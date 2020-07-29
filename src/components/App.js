@@ -18,7 +18,9 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <Route path="/" exact component={Dashboard} />
+        <Route path="/leaderboard" exact component={Leaderboard} />
         <Route path="/question-single/:id" component={QuestionSingle} />
         <Route path="/new" component={NewQuestion} />
       </Router>
