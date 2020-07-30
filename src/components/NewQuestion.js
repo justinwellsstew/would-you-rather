@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 
 class NewQuestion extends Component {
+  state = {
+    textOne: '',
+    textTwo: '',
+  };
+
+  handleChange1 = (e) => {
+    const textOne = e.target.value;
+
+    this.setState(() => {
+      textOne;
+    });
+  };
+
+  handleChange2 = (e) => {
+    const textOne = e.target.value;
+
+    this.setState(() => {
+      textTwo;
+    });
+  };
+
   render() {
     return (
       <div>
