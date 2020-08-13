@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
+import { saveQuestion } from '../utils/';
 
 class NewQuestion extends Component {
   state = {
-    textOne: '',
-    textTwo: '',
+    option1: '',
+    option2: '',
   };
 
-  handleChange1 = (e) => {
-    const textOne = e.target.value;
-
-    this.setState(() => {
-      textOne;
-    });
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleChange2 = (e) => {
-    const textOne = e.target.value;
-
-    this.setState(() => {
-      textTwo;
-    });
+  handleSubmit = () => {
+    formatQuestion(this.state.option1, this.state.option2);
   };
 
   render() {
@@ -28,9 +21,19 @@ class NewQuestion extends Component {
         <h2>Create New Question</h2>
         <strong>complete the question</strong>
         <h3>Would you rather... </h3>
-        <input type="text" placeholder="enter option one text here" />
+        <input
+          onChange={(e) => this.handleChange(e)}
+          type="text"
+          name="option1"
+          placeholder="enter option one text here"
+        />
         <strong>OR</strong>
-        <input type="text" placeholder="enter option two text here" />
+        <input
+          onChange={(e) => this.handleChange(e)}
+          type="text"
+          name="option2"
+          placeholder="enter option two text here"
+        />
         <button>Submit</button>
       </div>
     );
